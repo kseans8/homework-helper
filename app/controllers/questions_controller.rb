@@ -7,4 +7,26 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @question.description ||= "No description provided for this question."
   end
+
+  def new
+    @question = Question.new
+  end
+
+  def create
+    @question = Question.new(question_params)
+    if @question.save
+      flash[:notice] = "You made a Thing"
+      redirect_to @question
+    else
+      puts "plase"
+      flash[:alert] = "@question.errors.full_messages.to_sentence"
+      render :new
+    end
+  end
+
+  private
+
+  def question_params
+    params.require(:question).permit(:title, :description)
+  end
 end

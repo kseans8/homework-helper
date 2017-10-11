@@ -1,7 +1,11 @@
 <h1>Questions</h1>
 
-<ul id="orderedQuestionList">
+<div id="orderedQuestionList">
   <% @questions.each do |question| %>
-    <li> <%= link_to question.title, question %> </li>
+    <div> <%= link_to question.title, question %> </div>
   <% end %>
-</ul>
+</div>
+
+<div class="">
+  <%= link_to 'Ask a question', new_question_path %>
+</div>
