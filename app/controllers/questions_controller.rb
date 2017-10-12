@@ -19,7 +19,7 @@ class QuestionsController < ApplicationController
       redirect_to @question
     else
       puts "plase"
-      flash[:alert] = "@question.errors.full_messages.to_sentence"
+      flash[:notice] = @question.errors.full_messages.to_sentence
       render :new
     end
   end
