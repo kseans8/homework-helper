@@ -6,7 +6,7 @@ feature "index page is working" do
     question_two = Question.create(title: "What is the meaning of life?", description: "Please don't tell me it's 42.")
 
     visit questions_path
-    expect(page).to have_selector("ul#orderedQuestionList li:nth-child(1)", text: question_two.title) # child 1 to question 2 to prove that order is descending. ya bish?
-    expect(page).to have_selector("ul#orderedQuestionList li:nth-child(2)", text: question_one.title)
+    expect(page).to have_selector("div#orderedQuestionList div:nth-child(1)", text: question_two.title) # child 1 to question 2 to prove that order is descending. ya bish?
+    expect(page).to have_selector("div#orderedQuestionList div:nth-child(2)", text: question_one.title)
   end
 end
