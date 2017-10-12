@@ -15,10 +15,8 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     if @question.save
-      flash[:notice] = "You made a Thing"
       redirect_to @question
     else
-      puts "plase"
       flash[:notice] = @question.errors.full_messages.to_sentence
       render :new
     end
