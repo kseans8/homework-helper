@@ -1,18 +1,7 @@
 <div class='content-box'>
   <h1>Ask a question</h1>
 
-  <%= form_for(@question) do |f| %>
-    <div>
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-    </div>
-    <div>
-      <%= f.label :description %>
-      <%= f.text_field :description %>
-    </div>
-    <div>
-      <%= f.submit %>
-    </div>
-  <% end %>
+  <%= render 'form' %>
+
   <%= link_to "Back", questions_path %>
 </div>

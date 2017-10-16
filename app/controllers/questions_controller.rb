@@ -6,6 +6,7 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @question.description ||= "No description provided for this question."
+    @answers = @question.answers
   end
 
   def new

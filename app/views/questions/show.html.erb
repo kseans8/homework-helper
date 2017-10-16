@@ -1,4 +1,13 @@
 <h1> <%= @question.title %> </h1>
 <h2> <%= @question.description %> </h2>
 
+<% if @answers.empty? %>
+  <h3>No answers for this question yet. Think you can answer it? <%= link_to 'Answer this Question', new_question_answer_path(@question) %> </h3>
+<% else %>
+  <% @answers.each do |answer| %>
+    <h3> <%= answer.answer %> </h3>
+  <% end %>
+<% end %>
+
+<%= link_to 'Answer this Question', new_question_answer_path(@question) %>
 <%= link_to 'Back to Questions', questions_path %>

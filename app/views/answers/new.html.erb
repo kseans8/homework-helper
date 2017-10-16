@@ -1,0 +1,12 @@
+<div class="content-box">
+  <div>
+    <%= "Question: #{@question.title}" %>
+  </div>
+  <% unless @question.description.nil? %>
+    <div>
+      <%= "Description: #{@question.description}" %>
+    </div>
+  <% end %>
+
+  <%= render 'form' %>
+</div>
