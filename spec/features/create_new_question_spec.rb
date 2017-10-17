@@ -6,10 +6,10 @@ feature 'Filling out new question form' do
     expect(page).to have_link('Ask a question')
 
     click_link('Ask a question')
-    expect(page).to have_field('Title')
+    expect(page).to have_field('Question')
     expect(page).to have_field('Description')
 
-    fill_in('Title', :with => 'How do I learn Dvorak?')
+    fill_in('Question', :with => 'How do I learn Dvorak?')
     fill_in('Description', :with => 'I need to up my wpm.')
 
     click_button('Submit Question')
@@ -23,7 +23,7 @@ feature 'Filling out new question form' do
     expect(page).to have_link('Ask a question')
 
     click_link('Ask a question')
-    expect(page).to have_field('Title')
+    expect(page).to have_field('Question')
     expect(page).to have_field('Description')
 
     click_button('Submit Question')

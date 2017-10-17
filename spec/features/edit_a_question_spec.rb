@@ -5,13 +5,13 @@ feature "editing a question" do
     visit questions_path
     click_link('Ask a question')
 
-    fill_in('Title', :with => 'What is pie?')
+    fill_in('Question', :with => 'What is pie?')
     fill_in('Description', :with => "I see it in math all the time, but I don't understand what it is")
 
     click_button('Submit Question')
     click_link('Edit question')
 
-    fill_in('Title', :with => 'What is pi?')
+    fill_in('Question', :with => 'What is pi?')
     click_button('Submit Question')
     expect(page).to have_content('What is pi?')
   end
@@ -19,13 +19,13 @@ feature "editing a question" do
     visit questions_path
     click_link('Ask a question')
 
-    fill_in('Title', :with => 'What is pie?')
+    fill_in('Question', :with => 'What is pie?')
     fill_in('Description', :with => "I see it in math all the time, but I don't understand what it is")
 
     click_button('Submit Question')
     click_link('Edit question')
 
-    fill_in('Title', :with => '')
+    fill_in('Question', :with => '')
     click_button('Submit Question')
     expect(page).to have_content("Title can't be blank")
   end

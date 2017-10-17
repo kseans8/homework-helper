@@ -11,4 +11,5 @@
 <% end %>
 
 <%= link_to 'Edit question', edit_question_path %>
+<%= link_to 'Delete question', @question, method: :delete, data: { confirm: "Are you sure you want to delete this question? This question and all of its answers will be destroyed and will be unable to be recovered. Confirm?" } %>
 <%= link_to 'Back to questions', questions_path %>
