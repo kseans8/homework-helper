@@ -23,6 +23,21 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def edit
+    @question = Question.find(params[:id])
+  end
+
+  def update
+    @question = Question.find(params[:id])
+
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      flash[:notice] = @question.errors.full_messages.to_sentence
+      render :edit
+    end
+  end
+
   private
 
   def question_params

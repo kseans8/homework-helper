@@ -1,0 +1,11 @@
+<div class='content-box'>
+  <h1>Edit Question</h1>
+  <h3> <%= "Question: " + @question.title %> </h3>
+  <% unless @question.description.empty? %>
+    <h3> <%= "Question description: " + @question.description %> </h3>
+  <% end %>
+
+  <%= render 'form' %>
+
+  <%= link_to "Back", question_path(@question) %>
+</div>

@@ -1,6 +1,6 @@
 <%= form_for(@question) do |f| %>
   <div>
-    <%= f.label :title %>
+    <%= f.label :title, "Question" %>
     <%= f.text_field :title %>
   </div>
   <div>
@@ -8,6 +8,6 @@
     <%= f.text_field :description %>
   </div>
   <div>
-    <%= f.submit %>
+    <%= f.submit 'Submit Question' %>
   </div>
 <% end %>

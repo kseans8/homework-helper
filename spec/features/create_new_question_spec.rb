@@ -12,7 +12,7 @@ feature 'Filling out new question form' do
     fill_in('Title', :with => 'How do I learn Dvorak?')
     fill_in('Description', :with => 'I need to up my wpm.')
 
-    click_button('Create Question')
+    click_button('Submit Question')
 
     expect(page).to have_content('How do I learn Dvorak?')
     expect(page).to have_content('I need to up my wpm.')
@@ -26,7 +26,7 @@ feature 'Filling out new question form' do
     expect(page).to have_field('Title')
     expect(page).to have_field('Description')
 
-    click_button('Create Question')
+    click_button('Submit Question')
 
     expect(page).to have_content("Title can't be blank")
   end
