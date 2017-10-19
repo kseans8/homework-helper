@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HomeworkHelper</title>
+    <title>Homework Helper</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -9,6 +9,13 @@
   </head>
 
   <body>
+    <nav class="top-bar">
+      <div class="title-area" >
+        <div class="name">
+          <h1><a href="/">Homework Helper</a></h1>
+        </div>
+      </div>
+    </nav>
     <% if flash[:notice] %>
       <h2><%= flash.notice %></h2>
     <% end %>

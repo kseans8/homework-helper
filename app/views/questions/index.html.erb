@@ -1,11 +1,24 @@
-<h1>Questions</h1>
+<div class="index-page">
+  <div id="questions-index-header">
+    <div id="index-title">Questions</div>
+    <div id="ask-a-question-div">
+      <%= link_to 'Ask a question', new_question_path %>
+    </div>
+  </div>
 
-<div id="orderedQuestionList">
-  <% @questions.each do |question| %>
-    <div> <%= link_to question.title, question %> </div>
-  <% end %>
-</div>
-
-<div class="">
-  <%= link_to 'Ask a question', new_question_path %>
+  <div class="question-list">
+    <% @questions.each do |question| %>
+    <div class="question-content-box">
+      <div id="answers">
+        <div id="answer-count">
+          <%= question.answers.count %>
+        </div>
+        <div>answers</div>
+      </div>
+      <div id="question-title">
+        <%= link_to question.title, question, id: 'question' %>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
