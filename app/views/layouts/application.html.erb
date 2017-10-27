@@ -9,13 +9,16 @@
   </head>
 
   <body>
-    <nav class="top-bar">
+    <nav id="nav-bar" data-topbar role="navigation">
       <div class="title-area" >
         <div class="name">
-          <h1><a href="/">Homework Helper</a></h1>
+          <h1><a href="/questions">Homework Helper</a></h1>
         </div>
       </div>
     </nav>
+    <div class="nav-bar-spacer">
+
+    </div>
     <% if flash[:notice] %>
       <h2><%= flash.notice %></h2>
     <% end %>
