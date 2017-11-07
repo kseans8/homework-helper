@@ -1,59 +1,80 @@
-<div class="question-show-page">
+<div id="question-show-page">
   <div class="question-title">
     <%= @question.title %>
   </div>
-
-  <div class="question-details">
-    <div class="question-votes">
-      Votes will go here
-    </div>
+  <div class="question-stuff">
 
     <div class="question">
-      <div class="question-description">
-        <% if @question.description.empty? %>
-          <div class="no-question-description">
-            No description provided
+      <div class="question-votes">
+        Votes will go here
+      </div>
+
+      <div class="question-details">
+        <div class="question-description">
+          <% if @question.description.empty? %>
+            <p>No description provided</p>
+          <% else %>
+            <p><%= @question.description %></p>
+          <% end %>
+        </div>
+        <div class="question-stats">
+          <div class="question-asker">
+            username will go here
           </div>
-        <% else %>
-          <%= @question.description %>
+
+          <div class="question-timing">
+            asked <%= @question.created_at.strftime("%H:%M %d %b. %Y") %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="answers">
+      <% if @answers.empty? %>
+        <div class="no-answers">
+          <p>No answers for this question yet. Think you can answer it? <%= link_to 'Answer this question', new_question_answer_path(@question) %></p>
+        </div>
+      <% else %>
+        <% @answers.each do |answer| %>
+          <div class="answer">
+            <div class="answer-votes">
+              votes will go here
+            </div>
+            <div class="answer-details">
+              <div class="answer-description">
+                <p><%= answer.answer %></p>
+              </div>
+              <div class="answer-stats">
+                <div class="answerer">
+                  username will go here
+                </div>
+                <div class="answer-timing">
+                  answered <%= answer.created_at.strftime("%H:%M %d %b. %Y") %>
+                </div>
+              </div>
+            </div>
+          </div>
         <% end %>
-      </div>
-      <div class="question-stats">
-        <div class="question-asker">
-          username will go here
-        </div>
-
-        <div class="question-timing">
-          asked <%= @question.created_at.strftime("%H:%M %d %b. %Y") %>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answers">
-    <% if @answers.empty? %>
-      <div class="no-answers">
-        No answers for this question yet. Think you can answer it? <%= link_to 'Answer this question', new_question_answer_path(@question) %>
-      </div>
-    <% else %>
-      <% @answers.each do |answer| %>
-        <div class="answer">
-          <%= answer.answer %>
-        </div>
       <% end %>
-    <% end %>
-  </div>
+    </div>
 
-  <div class="question-links">
-    <div id="edit-question">
-      <%= button_to 'Edit question', edit_question_path , method: 'get'%>
+    <div class="question-links">
+      <div class="answer-question">
+        <%= button_to 'Answer this question', new_question_answer_path(@question), method: 'get' %>
+      </div>
+      <div id="edit-question">
+        <%= button_to 'Edit question', edit_question_path , method: 'get'%>
+      </div>
+      <div id="delete-question">
+        <%= button_to 'Delete question', @question, method: :delete, data: { confirm: "Are you sure you want to delete this question? This question and all of its answers will be destroyed and will be unable to be recovered. Confirm?" } %>
+      </div>
+      <div id="back-to-questions">
+        <%= button_to 'Back to questions', questions_path, method: 'get' %>
+      </div>
     </div>
-    <div id="delete-question">
-      <%= button_to 'Delete question', @question, method: :delete, data: { confirm: "Are you sure you want to delete this question? This question and all of its answers will be destroyed and will be unable to be recovered. Confirm?" } %>
-    </div>
-    <div id="back-to-questions">
-      <%= button_to 'Back to questions', questions_path, method: 'get' %>
-    </div>
+  </div>
+  <div class="advertisement">
+      <p>once this blows up, i'll charge chegg like $0.005 per ad and I'll be rich</p>
   </div>
 </div>
