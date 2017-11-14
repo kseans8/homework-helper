@@ -1,8 +1,8 @@
-<div id="question-show-page">
-  <div class="question-title">
-    <%= @question.title %>
-  </div>
-  <div class="question-stuff">
+<div class="question-show-page">
+  <div class="main-bar">
+    <div class="question-title">
+      <%= @question.title %>
+    </div>
 
     <div class="question">
       <div class="question-votes">
@@ -50,7 +50,7 @@
                   username will go here
                 </div>
                 <div class="answer-timing">
-                  answered <%= answer.created_at.strftime("%H:%M %d %b. %Y") %>
+                  answered <%= answer.created_at.strftime("%H:%M %b. %d, %Y") %>
                 </div>
               </div>
             </div>

@@ -10,7 +10,7 @@ feature "navigation to show page is working" do
     click_link('Can I have a beer yet?')
     expect(page).to have_content("No description provided for this question.")
 
-    click_link('Back to questions')
+    click_button('Back to questions')
     expect(page).to have_content('Can I have a beer yet?')
 
     click_link('Please hire me.')

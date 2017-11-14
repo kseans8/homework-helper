@@ -1,24 +1,42 @@
 <div class="question-index-page">
-  <div id="questions-index-header">
-    <div id="index-title">Questions</div>
-    <div id="ask-a-question-div">
-      <%= link_to 'Ask a question', new_question_path %>
-    </div>
-  </div>
+  <div class="main-bar">
 
-  <div class="question-list">
-    <% @questions.each do |question| %>
-    <div class="question-content-box">
-      <div id="answers">
-        <div id="answer-count">
-          <%= question.answers.count %>
-        </div>
-        <div>answers</div>
-      </div>
-      <div id="question-title">
-        <%= link_to question.title, question, id: 'question' %>
+    <div id="questions-index-header">
+      <div id="index-title">Questions</div>
+      <div id="ask-a-question-div">
+        <%= button_to 'Ask a question', new_question_path, method: 'get' %>
       </div>
     </div>
+
+    <div class="question-list">
+      <% @questions.each do |question| %>
+        <div class="question-content-box">
+          <div class="stats-container">
+            <div class="question-stats-box">
+              <div id="answer-count">
+                <%= question.answers.count %>
+              </div>
+              <div>
+                answers
+              </div>
+            </div>
+            <div class="question-stats-box">
+              <div class="vote-score">
+                vote score will go here
+              </div>
+              <div>
+                votes
+              </div>
+            </div>
+          </div>
+        <div id="question-title">
+          <%= link_to question.title, question, id: 'question' %>
+        </div>
+      </div>
     <% end %>
+  </div>
+</div>
+  <div class="advertisement">
+      <p>once this blows up, i'll charge chegg like $0.005 per ad and I'll be rich</p>
   </div>
 </div>

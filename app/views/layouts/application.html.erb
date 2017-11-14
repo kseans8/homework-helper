@@ -11,8 +11,20 @@
   <body>
     <nav id="nav-bar" data-topbar role="navigation">
       <div class="title-area" >
-        <div class="name">
-          <h1><a href="/questions">Homework Helper</a></h1>
+        <h1 class="site-name"><a href="/questions">Homework Helper</a></h1>
+        <div class="search-bar">
+          A Search bar will go here
+        </div>
+        <div class="users">
+          A button to users will go here
+        </div>
+        <div class="login-options">
+          <div class="login">
+            A button to log in will be here
+          </div>
+          <div class="sign-up">
+            A button to sign up will be here
+          </div>
         </div>
       </div>
     </nav>
@@ -20,7 +32,7 @@
 
     </div>
     <% if flash[:notice] %>
-      <h2><%= flash.notice %></h2>
+      <h2 class="flash-notice"><%= flash.notice %></h2>
     <% end %>
     <%= yield %>
   </body>

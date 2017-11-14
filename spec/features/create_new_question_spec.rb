@@ -3,9 +3,9 @@ require 'rails_helper'
 feature 'Filling out new question form' do
   scenario "Happy path => I fill out everything properly and nothing breaks!" do
     visit questions_path
-    expect(page).to have_link('Ask a question')
+    expect(page).to have_button('Ask a question')
 
-    click_link('Ask a question')
+    click_button('Ask a question')
     expect(page).to have_field('Question')
     expect(page).to have_field('Description')
 
@@ -20,9 +20,9 @@ feature 'Filling out new question form' do
 
   scenario "Sad path => I do not enter a title" do
     visit questions_path
-    expect(page).to have_link('Ask a question')
+    expect(page).to have_button('Ask a question')
 
-    click_link('Ask a question')
+    click_button('Ask a question')
     expect(page).to have_field('Question')
     expect(page).to have_field('Description')
 
