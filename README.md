@@ -1,5 +1,6 @@
 # README
-![Build Status](https://app.codeship.com/projects/256799/status?branch=master)
+* Badges:
+Codeship: ![Build Status](https://app.codeship.com/projects/256799/status?branch=master)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
