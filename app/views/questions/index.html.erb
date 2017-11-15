@@ -3,9 +3,11 @@
 
     <div id="questions-index-header">
       <div id="index-title">Questions</div>
-      <div id="ask-a-question-div">
-        <%= button_to 'Ask a question', new_question_path, method: 'get' %>
-      </div>
+      <% if user_signed_in? %>
+        <div id="ask-a-question-div">
+          <%= button_to 'Ask a question', new_question_path, method: 'get' %>
+        </div>
+      <% end %>
     </div>
 
     <div class="question-list">
