@@ -13,6 +13,7 @@ class AnswersController < ApplicationController
     @answer = Answer.new(answer_params)
     @question = Question.find(params[:question_id])
     @answer.question = @question
+    @answer.user = current_user
     if @answer.save
       redirect_to @question
     else

@@ -19,7 +19,7 @@
         </div>
         <div class="question-stats">
           <div class="question-asker">
-            username will go here
+            <%= link_to @question.user.username, @question.user %>
           </div>
 
           <div class="question-timing">
@@ -54,7 +54,7 @@
               </div>
               <div class="answer-stats">
                 <div class="answerer">
-                  username will go here
+                  <%= link_to answer.user.username, answer.user %>
                 </div>
                 <div class="answer-timing">
                   answered <%= answer.created_at.strftime("%H:%M %b. %d, %Y") %>

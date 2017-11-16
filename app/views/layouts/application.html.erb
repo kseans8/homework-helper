@@ -16,7 +16,7 @@
           A Search bar will go here
         </div>
         <div class="users">
-          A button to users will go here
+          <%= button_to "Users", users_path, method: "get" %>
         </div>
         <% if user_signed_in? %>
           <div class="lot-out">
