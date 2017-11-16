@@ -33,9 +33,16 @@
     <div class="answers">
       <% if @answers.empty? %>
         <div class="no-answers">
-          <p>No answers for this question yet. Think you can answer it? <%= link_to 'Answer this question', new_question_answer_path(@question) %></p>
+          <p>No answers for this question yet. Think you can answer it?</p>
         </div>
       <% else %>
+      <div class="answer-count">
+        <% if @answers.length == 1  %>
+          <%= @answers.length %> Answer
+        <% else %>
+          <%= @answers.length %> Answers
+        <% end %>
+      </div>
         <% @answers.each do |answer| %>
           <div class="answer">
             <div class="answer-votes">
@@ -61,7 +68,17 @@
 
     <div class="question-links">
       <div class="answer-question">
-        <%= button_to 'Answer this question', new_question_answer_path(@question), method: 'get' %>
+        <%= form_for [@question, Answer.new] do |f| %>
+          <div>
+            <%= f.label "Your Answer" %>
+          </div>
+          <div>
+            <%= f.text_area :answer, cols: 100, rows: 10 %>
+          </div>
+          <div>
+            <%= f.submit "Submit Answer"%>
+          </div>
+        <% end %>
       </div>
       <div id="edit-question">
         <%= button_to 'Edit question', edit_question_path , method: 'get'%>

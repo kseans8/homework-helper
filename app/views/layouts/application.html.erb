@@ -38,10 +38,17 @@
 
     </div>
     <% if flash[:notice] %>
-      <h2 class="flash-notice"><%= flash.notice %></h2>
+      <div id="flash-notice">
+        <%= flash.notice %>
+      </div>
+      <script type="text/javascript">
+        $(document).ready(function(){
+          setTimeout(function(){
+            $('#flash-notice').fadeOut();
+          }, 3000);
+        })
+      </script>
     <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
