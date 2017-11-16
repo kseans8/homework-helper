@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 feature "editing a question" do
+
+  before(:each) do
+    user = FactoryGirl.create(:user)
+    sign_in user
+  end
+
   scenario 'I make a question, then decide I need to edit it properly' do
     visit questions_path
     click_button('Ask a question')

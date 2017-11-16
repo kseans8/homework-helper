@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 feature 'Filling out new question form' do
+
+  before(:each) do
+    user = FactoryGirl.create(:user)
+    sign_in user
+  end
+
   scenario "Happy path => I fill out everything properly and nothing breaks!" do
     visit questions_path
     expect(page).to have_button('Ask a question')

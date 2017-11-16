@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 feature 'Deleting a question' do
+
+  before(:each) do
+    user = FactoryGirl.create(:user)
+    sign_in user
+  end
+
   scenario 'I realized that the question I asked was incredibly stupid and I dont want anybody to know that I had that thought' do
     visit questions_path
     click_button('Ask a question')

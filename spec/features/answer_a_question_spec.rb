@@ -6,7 +6,6 @@ feature "Answering a question" do
 
     visit(question_path(question))
 
-    click_link('Answer this question')
     fill_in('Answer', :with => "I'm here for you my dude.")
     click_button('Submit Answer')
 
@@ -17,7 +16,6 @@ feature "Answering a question" do
 
     visit(question_path(question))
 
-    click_link('Answer this question')
     click_button('Submit Answer')
 
     expect(page).to have_content("Answer can't be blank")

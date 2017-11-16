@@ -70,7 +70,7 @@
       <div class="answer-question">
         <%= form_for [@question, Answer.new] do |f| %>
           <div>
-            <%= f.label "Your Answer" %>
+            <%= f.label :answer, "Your Answer" %>
           </div>
           <div>
             <%= f.text_area :answer, cols: 100, rows: 10 %>
