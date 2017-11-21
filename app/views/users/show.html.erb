@@ -1,2 +1,30 @@
-<h1> <%= @user.username %> </h1>
-<h1> <%= @user.questions.size %> </h1>
+<div class="page">
+  <div class="user-card">
+    <div class="user-photo">
+      <p>A photo will go here. Display your uniqueness through a picture!</p>
+    </div>
+    <div class="user-info">
+      <div class="username">
+        <h1> <%= @user.username %> </h1>
+      </div>
+      <div class="user-desctiption">
+        <p>user desctiption will go here</p>
+      </div>
+    </div>
+    <div class="user-sidebar">
+      <div class="user-stats">
+        <div class="user-questions">
+          <p> <%= @user.questions.size %> </p>
+          <p>questions</p>
+        </div>
+        <div class="user-answers">
+          <p> <%= @user.answers.size %> </p>
+          <p>answers</p>
+        </div>
+      </div>
+      <div class="user-links">
+        user links/other profile stats will go here
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,13 @@
-<% @users.each do |user| %>
-  <h1> <%= link_to user.username, user %> </h1>
-<% end %>
+<div class="users-page">
+  <div class="users-list">
+    <% @users.each_slice(3) do |slice| %>
+      <div class="row">
+        <% slice.each do |user| %>
+          <div class="user-div">
+            <%= link_to user.username, user %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

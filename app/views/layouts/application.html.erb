@@ -15,19 +15,19 @@
         <div class="search-bar">
           A Search bar will go here
         </div>
-        <div class="users">
+        <div class="users-button">
           <%= button_to "Users", users_path, method: "get" %>
         </div>
         <% if user_signed_in? %>
-          <div class="lot-out">
+          <div class="log-out-button">
             <%= button_to 'Sign Out', destroy_user_session_path, :method => :delete %>
           </div>
         <% else %>
           <div class="login-options">
-            <div class="sign-up">
+            <div class="sign-up-button">
               <%= button_to "Sign Up", new_user_registration_path, method: "get" %>
             </div>
-            <div class="login">
+            <div class="login-button">
               <%= button_to "Log In", new_user_session_path, method: "get" %>
             </div>
           </div>

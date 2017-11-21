@@ -55,11 +55,22 @@ body {
   background: lightgrey;
 }
 
-.question-index-page, .question-show-page {
+.page {
   width: 930px;
   padding: 15px 0px;
   margin: 0 auto;
   display: flex;
+}
+
+.users-page {
+  text-align: center;
+}
+
+.users-list {
+  width: 930px;
+  padding: 15px 0px;
+  margin: 0 auto;
+  display: inline-block;
 }
 
 .main-bar {
@@ -161,6 +172,51 @@ body {
   border-bottom: solid lightgrey 2px;
 }
 
-.no-answers {
+.user-div {
+  box-sizing: border-box;
+  width: 30%;
+  margin: 10px 1.66%;
+  float: left;
+}
 
+.user-card {
+  width: 100%;
+  display: inline-block;
+}
+
+.user-photo {
+  float: left;
+  width: 25%;
+  height: 250px;
+}
+
+.user-info {
+  float: left;
+  width: 50%;
+}
+
+.user-sidebar {
+  float: left;
+  width: 25%;
+}
+
+.user-stats {
+  display: inline-block;
+}
+
+.user-questions, .user-answers {
+  margin-right: 10px;
+  float: left;
+  text-align: center;
+}
+
+.user-questions p, .user-answers p {
+  margin: 0px;
+  height: auto;
+}
+
+.user-links {
+  border-top: solid 1px lightgrey;
+  margin-top: 5px;
+  padding-top: 5px;
 }
