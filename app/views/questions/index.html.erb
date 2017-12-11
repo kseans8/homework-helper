@@ -10,34 +10,9 @@
       <% end %>
     </div>
 
-    <div class="question-list">
-      <% @questions.each do |question| %>
-        <div class="question-content-box">
-          <div class="stats-container">
-            <div class="question-stats-box">
-              <div id="answer-count">
-                <%= question.answers.count %>
-              </div>
-              <div>
-                answers
-              </div>
-            </div>
-            <div class="question-stats-box">
-              <div class="vote-score">
-                vote score will go here
-              </div>
-              <div>
-                votes
-              </div>
-            </div>
-          </div>
-        <div id="question-title">
-          <%= link_to question.title, question, id: 'question' %>
-        </div>
-      </div>
-    <% end %>
+    <div id="question-list">
+    </div>
   </div>
-</div>
   <div class="advertisement">
       <p>once this blows up, i'll charge chegg like $0.005 per ad and I'll be rich</p>
   </div>

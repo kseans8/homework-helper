@@ -133,8 +133,13 @@ body {
   padding-left: 15px;
 }
 
-.question-title, .answer-count {
-  font-size: 24px;
+.question-title{
+  font-size: 26px;
+  border-bottom: solid lightgrey 2px;
+}
+
+.answer-count {
+  font-size: 22px;
   border-bottom: solid lightgrey 2px;
 }
 
